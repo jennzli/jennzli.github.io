@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Home</title>
+    <link rel="stylesheet" href="node_modules/bulma/css/bulma.css"/>
+    <link rel="stylesheet" href="home.css">
+
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.8.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.8.0/mapbox-gl.css" rel="stylesheet" />
+
+    
+</head>
+<body>
+    <div>
+        <section class="hero is-primary" style="background-color: #FC94AF">
+            <div class="hero-body">
+            <h1 class="title">
+                WC Vital
+            </h1>
+            </div>
+        </section>
+
+        <div class="topnav">
+            <a class="active" href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="vision.html">Vision</a>
+        </div>
+
+        <div id="map"></div>
+
+        <div>
+            <img src= "https://i.imgur.com/KKvUIPb.jpg">
+        </div>
+    </div>
+    
+    <script>
+        mapboxgl.accessToken = 
+        'pk.eyJ1IjoiamVubnpsaSIsImEiOiJjazZ5NTBncHEwZTcwM2tteXNkbmZ4NjlrIn0.To0JrM3F4CQ1-mDwRjxMAA';
+            var map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/streets-v11',
+                center: [-79.0469, 35.9049],
+                zoom: 13
+            });
+            map.on('load', function() {
+                map.addSource('places' , {
+                    'type': 'geojson',
+                    'data': {
+                        'type': 'FeatureCollection',
+                        'features': [
+                    {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    '<strong>UNC Horizon Program</strong><p>Free menstrual products available and donations are welcome!</p>',
+                                'icon': 'hospital'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [-79.071990, 35.914161]
+                            }
+                        },
+                        {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    '<strong>Inter-Faith Council for Social Service</strong><p>Free menstrual products available and donations are welcome!</p>',
+                                'icon': 'hospital'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [-79.056398, 35.914313]
+                            }
+                        },
+                        {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    '<strong>Freedom House Recovery Center</strong><p>Free menstrual products available and donations are welcome!</p>',
+                                'icon': 'hospital'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [-79.060252, 35.966630]
+                            }
+                        },
+                        {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    '<strong>Carolina Cupboard Community Food Pantry</strong><p>Free menstrual products available and donations are welcome!</p>',
+                                'icon': 'hospital'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [-79.043817, 35.906651]
+                            }
+                        },
+                        {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    "<strong>Frank Porter Graham Union</strong><p>Free menstrual products available and donations are welcome!</p>",
+                                'icon': 'hospital'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [-79.047498, 35.910405]
+                            }
+                        },
+                        {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    '<strong>Kenan Flagler Business School</strong><p>Free menstrual products available and donations are welcome!</p>',
+                                'icon': 'hospital'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [-79.045588, 35.899991]
+                            }
+                        },
+                        {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    '<strong>The Sonja Haynes Stone Center</strong><p>Free menstrual products available and donations are welcome!</p>',
+                                'icon': 'hospital'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [-79.049387, 35.908220]
+                            }
+                        },
+                        {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    "<strong>Chapel Hill Planned Parenthood</strong><p>Free menstrual products available and donations are welcome!</p>",
+                                'icon': 'parking-garage'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [-79.014033, 35.945279]
+                            }
+                        },
+                        {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    '<strong>Loudermilk Center for Excellence</strong><p>Gender Neutral bathrooms available!</p>',
+                                'icon': 'toilet'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [-79.046651, 35.906570]
+                            }
+                        },
+                        
+                        {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    '<strong>Abernethy Hall</strong><p>Gender Neutral bathrooms available!</p>',
+                                'icon': 'toilet'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [-79.054264, 35.911702]
+                            }
+                        },
+                       
+                         {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    '<strong>Ackland Art Museum</strong><p>Gender Neutral bathrooms available!</p>',
+                                'icon': 'toilet'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [-79.054422, 35.912874]
+                            }
+                        },
+                         {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    '<strong>Beard Hall</strong><p>Gender Neutral bathrooms available!</p>',
+                                'icon': 'toilet'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [-79.053350, 35.907533]
+                            }
+                        },
+                         {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    '<strong>Bingham Hall</strong><p>Gender Neutral bathrooms available!</p>',
+                                'icon': 'toilet'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [-79.049551, 35.910566]
+                            }
+                        },
+                         {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    '<strong>Bioinformatics Building</strong><p>Gender Neutral bathrooms available!</p>',
+                                'icon': 'toilet'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [-79.053348, 35.901926]
+                            }
+                        },
+                         {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    '<strong>Boshamer Stadium</strong><p>Gender Neutral bathrooms available!</p>',
+                                'icon': 'toilet'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [-79.043000, 35.906790]
+                            }
+                        },
+                         {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    '<strong>Brauer Hall</strong><p>Gender Neutral bathrooms available!</p>',
+                                'icon': 'toilet'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [-79.053218, 35.904694]
+                            }
+                        },
+                         {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    '<strong>Brinkhous-Bullitt Building</strong><p>Gender Neutral bathrooms available!</p>',
+                                'icon': 'toilet'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [-79.051519, 35.906218]
+                            }
+                        },
+                         {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    '<strong>Campus Y</strong><p>Gender Neutral bathrooms available!</p>',
+                                'icon': 'toilet'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [-79.051250, 35.911542]
+                            }
+                        },
+                         {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    '<strong>Carolina Inn</strong><p>Gender Neutral bathrooms available!</p>',
+                                'icon': 'toilet'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [-79.054408, 35.909921]
+                            }
+                        },
+                         {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    '<strong>Carmichael Arena</strong><p>Gender Neutral bathrooms available!</p>',
+                                'icon': 'toilet'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [-79.045086, 35.909853]
+                            }
+                        },
+                         {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    '<strong>Carrington Hall</strong><p>Gender Neutral bathrooms available!</p>',
+                                'icon': 'toilet'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [-79.051857, 35.907011]
+                            }
+                        },
+                         {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    '<strong>Davie Hall</strong><p>Gender Neutral bathrooms available!</p>',
+                                'icon': 'toilet'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [-79.049484, 35.913002]
+                            }
+                        },
+                         {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    '<strong>Dey Hall</strong><p>Gender Neutral bathrooms available!</p>',
+                                'icon': 'toilet'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [-79.050705, 35.910039]
+                            }
+                        },
+                        {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    '<strong>Friday Center</strong><p>Gender Neutral bathrooms available!</p>',
+                                'icon': 'toilet'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [-79.011132, 35.899490]
+                            }
+                        },
+                        {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    '<strong>Genetic Medicine Research Building</strong><p>Gender Neutral bathrooms available!</p>',
+                                'icon': 'toilet'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [-79.054246, 35.901551]
+                            }
+                        },
+                        {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    '<strong>Genome Sciences Building</strong><p>Gender Neutral bathrooms available!</p>',
+                                'icon': 'toilet'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [-79.050800, 35.907894]
+                            }
+                        },
+                        {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    '<strong>Graham Memorial</strong><p>Gender Neutral bathrooms available!</p>',
+                                'icon': 'toilet'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [-79.051615, 35.914329]
+                            }
+                        },
+                        {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    '<strong>Macnider Hall</strong><p>Gender Neutral bathrooms available!</p>',
+                                'icon': 'toilet'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [-79.052594, 35.906104]
+                            }
+                        },
+                        {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    '<strong>Peabody Hall</strong><p>Gender Neutral bathrooms available!</p>',
+                                'icon': 'toilet'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [-79.053418, 35.910734]
+                            }
+                        },
+                        {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    '<strong>UNC Medical School</strong><p>Gender Neutral bathrooms available!</p>',
+                                'icon': 'toilet'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [-79.052253, 35.906284]
+                            }
+                        },
+                        {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    '<strong>Pettigrew Hall</strong><p>Gender Neutral bathrooms available!</p>',
+                                'icon': 'toilet'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [-79.052923, 35.913894]
+                            }
+                        },
+                        {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    '<strong>Sitterson Hall</strong><p>Gender Neutral bathrooms available!</p>',
+                                'icon': 'toilet'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [-79.053334, 35.910209]
+                            }
+                        },
+                        {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    '<strong>SASB North</strong><p>Gender Neutral bathrooms available!</p>',
+                                'icon': 'toilet'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [-79.043833, 35.904730]
+                            }
+                        },
+                        {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    '<strong>Swain Hall</strong><p>Gender Neutral bathrooms available!</p>',
+                                'icon': 'toilet'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [-79.053748, 35.911639]
+                            }
+                        },
+                        {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    '<strong>Taylor Campus Health</strong><p>Gender Neutral bathrooms available!</p>',
+                                'icon': 'toilet'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [-79.049559, 35.906123]
+                            }
+                        },
+                        {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    '<strong>Woolen Gym</strong><p>Gender Neutral bathrooms available!</p>',
+                                'icon': 'toilet'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [-79.046162, 35.909592]
+                            }
+                        },
+                        {
+                            'type': 'Feature',
+                            'properties': {
+                                'description':
+                                    '<strong>Frank Porter Graham Union</strong><p>Gender Neutral bathrooms available!</p>',
+                                'icon': 'toilet'
+                            },
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [-79.047498, 35.910405]
+                            }
+                        }
+                        ]
+                    }
+                });
+            
+            // Add a layer showing the places.
+            map.addLayer({
+            'id': 'places',
+            'type': 'symbol',
+            'source': 'places',
+            'layout': {
+            'icon-image': '{icon}-15',
+            'icon-allow-overlap': true
+            }
+            });
+    
+            // Create a popup, but don't add it to the map yet.
+            var popup = new mapboxgl.Popup({
+            closeButton: false,
+            closeOnClick: false
+            });
+            
+            map.on('mouseenter', 'places', function(e) {
+            // Change the cursor style as a UI indicator.
+            map.getCanvas().style.cursor = 'pointer';
+            
+            var coordinates = e.features[0].geometry.coordinates.slice();
+            var description = e.features[0].properties.description;
+            
+            // Ensure that if the map is zoomed out such that multiple
+            // copies of the feature are visible, the popup appears
+            // over the copy being pointed to.
+            while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+            coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+            }
+            
+            // Populate the popup and set its coordinates
+            // based on the feature found.
+            popup
+            .setLngLat(coordinates)
+            .setHTML(description)
+            .addTo(map);
+            });
+            
+            map.on('mouseleave', 'places', function() {
+            map.getCanvas().style.cursor = '';
+            popup.remove();
+            });
+        });
+        </script>  
+    </body>
+</html>

@@ -1,0 +1,79 @@
+.topnav {
+    overflow: hidden;
+    background-color: #FFE6FF;
+  }
+  
+.topnav a {
+    float: left;
+    color:black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+.topnav a:hover {
+    background-color: #eadeff;
+    color: black;
+  }
+  
+.topnav a.active {
+    background-color: #967bb6;
+    color: white;
+    font-weight: bold;
+  }
+.is-primary {
+    text-align: center;
+  }
+
+.subtitle {
+    font-weight:bold;
+    font-size: 25px;
+  }
+
+.title {
+      font-family: cursive;
+      font-size: 50px;
+  }
+
+.aboutBlurb {
+    margin-top: 50px;
+    margin-bottom: 100px;
+    margin-right: 150px;
+    margin-left: 80px;
+  }
+
+body {
+  background-color: #FFE6E6;
+}
+
+#map { 
+    position: absolute; 
+    top: 30%; 
+    bottom: 0%; 
+    width: 60%; 
+    margin-left: 80px;
+    margin-top: 50px;
+    margin-bottom: 75px;
+    margin-right: 150px;
+    border-style: solid;
+    border-color:#FC94AF;
+
+}
+.mapboxgl-popup {
+    max-width: 400px;
+    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+img {
+    width: 20%;
+    height: auto;
+    position: relative;
+    float: right;
+    margin-top: 70px;
+    margin-right: 90px;
+}
+
+p, li {
+  font-size: 20px;
+}
